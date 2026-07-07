@@ -1,0 +1,151 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@300;400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: -apple-system, BlinkMacSystemFont, "SF Pro", "SF Pro Text", "SF Pro Display", "Inter", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+  
+  --color-primary-dark: #000000;
+  --color-brand-bg: #050508;
+  --color-brand-gray-900: #0a0a0f;
+  --color-brand-gray-800: #12121a;
+  --color-brand-gray-700: #1c1c28;
+  --color-brand-gray-600: #2a2a3c;
+  --color-accent-blue: #0071e3;
+  --color-accent-teal: #30d5c8;
+  --color-accent-purple: #af52de;
+  --color-accent-red: #ff3b30;
+  --color-vulnerability: #ff453a;
+  --color-warning-amber: #ff9f0a;
+}
+
+/* Custom premium backgrounds */
+.theme-neon-circuit {
+  background-color: #020108;
+}
+
+.theme-cosmic {
+  background-color: #030305;
+  background-image: radial-gradient(rgba(255, 255, 255, 0.015) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+
+.theme-cyber-grid {
+  background-color: #040810;
+  background-image: 
+    linear-gradient(rgba(0, 113, 227, 0.015) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 113, 227, 0.015) 1px, transparent 1px);
+  background-size: 44px 44px;
+}
+
+.theme-deep-navy {
+  background-color: #02040b;
+  background-image: 
+    radial-gradient(rgba(48, 213, 200, 0.025) 1.5px, transparent 1.5px);
+  background-size: 24px 24px;
+}
+
+.theme-carbon-dots {
+  background-color: #0b0c10;
+  background-image: 
+    linear-gradient(rgba(255, 255, 255, 0.005) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.005) 1px, transparent 1px),
+    radial-gradient(rgba(255, 255, 255, 0.01) 1px, transparent 1px);
+  background-size: 30px 30px, 30px 30px, 15px 15px;
+}
+
+/* Apple Premium Glassmorphism */
+.apple-glass {
+  background: rgba(4, 6, 14, 0.18);
+  backdrop-filter: blur(40px) saturate(220%);
+  -webkit-backdrop-filter: blur(40px) saturate(220%);
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6), inset 0 1px 0px rgba(255, 255, 255, 0.06);
+  transition: border-color 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1), background 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.apple-glass:hover {
+  background: rgba(6, 8, 20, 0.28);
+  border-color: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 15px 50px rgba(0, 0, 0, 0.75), inset 0 1px 0px rgba(255, 255, 255, 0.12);
+}
+
+.apple-glass-bright {
+  background: rgba(255, 255, 255, 0.012);
+  backdrop-filter: blur(40px) saturate(190%);
+  -webkit-backdrop-filter: blur(40px) saturate(190%);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.apple-glass-bright:hover {
+  background: rgba(255, 255, 255, 0.035);
+  border-color: rgba(255, 255, 255, 0.12);
+}
+
+.apple-text-gradient {
+  background: linear-gradient(135deg, #ffffff 0%, #b4b4bf 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.apple-glow-cyan {
+  box-shadow: 0 0 50px rgba(48, 213, 200, 0.08);
+}
+
+.apple-glow-blue {
+  box-shadow: 0 0 50px rgba(0, 113, 227, 0.08);
+}
+
+.apple-glow-teal {
+  box-shadow: 0 0 50px rgba(48, 213, 200, 0.08);
+}
+
+/* Smooth custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #050508;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 99px;
+  border: 2px solid #050508;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+html {
+  scroll-behavior: smooth;
+  background-color: #050508;
+  color: #f5f5f7;
+}
+
+/* Base custom interactive transitions */
+.transition-apple {
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Subtle background glow pulsing */
+@keyframes floatGlow {
+  0%, 100% { transform: translateY(0px) scale(1); }
+  50% { transform: translateY(-20px) scale(1.05); }
+}
+
+.animate-glow-float-1 {
+  animation: floatGlow 15s ease-in-out infinite;
+}
+
+.animate-glow-float-2 {
+  animation: floatGlow 18s ease-in-out infinite alternate;
+}
+
+.animate-glow-float-3 {
+  animation: floatGlow 22s ease-in-out infinite;
+}
+
+
