@@ -1,15 +1,22 @@
 import { motion } from 'motion/react';
 import { Award, Zap, LockKeyhole, ArrowUpRight, ChevronRight, ArrowRight, CheckCircle2, Sparkles } from 'lucide-react';
+import HeroBgVideo from './HeroBgVideo';
 
 interface HeroSectionProps {
   scrollToSection: (id: string) => void;
   setActiveModal: (type: 'oscp' | 'nda' | 'response' | null) => void;
+  customVideoUrl: string;
 }
 
-export default function HeroSection({ scrollToSection, setActiveModal }: HeroSectionProps) {
+export default function HeroSection({ scrollToSection, setActiveModal, customVideoUrl }: HeroSectionProps) {
   return (
-    <section id="home-section" className="relative px-6 pt-36 pb-24 md:pt-48 md:pb-36 max-w-7xl mx-auto flex flex-col items-center text-center">
-      {/* Glow badge */}
+    <section id="home-section" className="relative px-6  pt-36 pb-24 md:pt-48 md:pb-36  h-screen mx-auto flex flex-col items-center text-center">
+      
+
+    
+
+
+    <div className='max-w-7xl mx-auto flex flex-col items-center text-center relative z-10'>
       <motion.div 
         initial={{ opacity: 0, y: -10 }}
         animate={{ opacity: 1, y: 0 }}
@@ -35,7 +42,7 @@ export default function HeroSection({ scrollToSection, setActiveModal }: HeroSec
         initial={{ opacity: 0, y: 15 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-        className="text-base md:text-xl text-zinc-400 max-w-2xl leading-relaxed mb-10"
+        className="text-base md:text-xl text-white max-w-2xl leading-relaxed mb-10"
       >
         Penetration testing, vulnerability assessment, threat intelligence — we diagnose architecture perimeters, verify critical protocols, and safeguard client privacy securely.
       </motion.p>
@@ -63,7 +70,7 @@ export default function HeroSection({ scrollToSection, setActiveModal }: HeroSec
           </button>
         </div>
 
-        {/* Consultation & Proposal Badge */}
+         {/* Consultation & Proposal Badge */}
         <div className="flex items-center gap-2.5 text-[11px] sm:text-xs font-medium text-zinc-400 select-none px-4 py-2 bg-white/[0.02] border border-white/[0.05] rounded-full backdrop-blur-sm shadow-sm">
           <div className="flex items-center gap-1.5">
             <CheckCircle2 className="w-3.5 h-3.5 text-[#52eb8e] stroke-[2.5]" />
@@ -74,7 +81,7 @@ export default function HeroSection({ scrollToSection, setActiveModal }: HeroSec
             Proposal within <span className="text-[#52eb8e] font-semibold">5 days</span>
           </div>
         </div>
-      </motion.div>
+      </motion.div> 
 
       {/* TRUST TRUST AND VERIFIED BADGES GRID */}
       <motion.div 
@@ -83,8 +90,8 @@ export default function HeroSection({ scrollToSection, setActiveModal }: HeroSec
         transition={{ duration: 0.8, delay: 0.4 }}
         className="w-full max-w-5xl grid grid-cols-1 md:grid-cols-3 gap-6"
       >
-        {/* Card 1 - Security Standards */}
-        <button
+         {/* Card 1 - Security Standards */}
+         <button
           onClick={() => setActiveModal('oscp')}
           className="p-6 rounded-2xl apple-glass text-left hover:border-cyan-500/30 transition-all group relative cursor-pointer outline-none focus:ring-1 focus:ring-cyan-500/50"
           id="badge-oscp-trigger"
@@ -105,7 +112,6 @@ export default function HeroSection({ scrollToSection, setActiveModal }: HeroSec
           </span>
         </button>
 
-        {/* Card 2 - SLA */}
         <button
           onClick={() => setActiveModal('response')}
           className="p-6 rounded-2xl apple-glass text-left hover:border-amber-500/30 transition-all group relative cursor-pointer outline-none focus:ring-1 focus:ring-amber-500/50"
@@ -127,7 +133,6 @@ export default function HeroSection({ scrollToSection, setActiveModal }: HeroSec
           </span>
         </button>
 
-        {/* Card 3 - NDA */}
         <button
           onClick={() => setActiveModal('nda')}
           className="p-6 rounded-2xl apple-glass text-left hover:border-emerald-500/30 transition-all group relative cursor-pointer outline-none focus:ring-1 focus:ring-emerald-500/50"
@@ -148,7 +153,9 @@ export default function HeroSection({ scrollToSection, setActiveModal }: HeroSec
             <ChevronRight className="w-3 h-3 text-emerald-500 group-hover:translate-x-1 transition-all" />
           </span>
         </button>
-      </motion.div>
+      </motion.div> 
+
+    </div>
     </section>
   );
 }

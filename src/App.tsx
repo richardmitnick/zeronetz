@@ -22,6 +22,10 @@ import FooterSection from './components/FooterSection';
 import LegalPage from './components/LegalPage';
 import ContactPage from './components/ContactPage';
 
+// import video path 
+import HeroBgVideoUrl from '@/public/video/Doze Studio.mp4'
+import HeroBgVideo from './components/HeroBgVideo';
+
 export default function App() {
   const [activeModal, setActiveModal] = useState<'oscp' | 'nda' | 'response' | null>(null);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -34,8 +38,6 @@ export default function App() {
   
   // High-fidelity constant background theme: cyber video
   const bgTheme = 'custom-video';
-  const customVideoUrl = 'https://assets.mixkit.co/videos/preview/mixkit-cyber-security-system-interface-with-binary-code-and-lock-34449-large.mp4';
-
   const glows = {
     c1: 'bg-purple-500/10',
     c2: 'bg-fuchsia-500/10',
@@ -131,24 +133,16 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen theme-neon-circuit text-zinc-100 font-sans selection:bg-zinc-700 selection:text-white relative overflow-x-hidden pb-12 transition-all duration-750">
-
-      {/* Custom Uploaded Video Background - Fixed, Object Cover to prevent any stretching */}
-      {bgTheme === 'custom-video' && customVideoUrl && (
-        <video
-          src={customVideoUrl}
-          autoPlay
-          loop
-          muted
-          playsInline
-          className="fixed inset-0 w-full h-full object-cover pointer-events-none z-0"
-        />
-      )}
+    <div className={`min-h-screen  theme-neon-circuit text-zinc-100 font-sans selection:bg-zinc-700 selection:text-white overflow-x-hidden pb-12 relative transition-all duration-750`}>
+      <div className='fixed inset-0 w-full h-full overflow-hidden pointer-events-none z-0 opacity-60'>
+      <HeroBgVideo customVideoUrl={HeroBgVideoUrl} />
+    </div>
+     
 
       {/* Decorative subtle ambient lights with smooth Apple floating animation */}
-      <div className={`fixed top-0 left-1/4 w-[500px] h-[500px] ${glows.c1} rounded-full filter blur-[130px] pointer-events-none animate-glow-float-1 transition-all duration-1000`} />
-      <div className={`fixed top-1/3 right-1/4 w-[400px] h-[400px] ${glows.c2} rounded-full filter blur-[130px] pointer-events-none animate-glow-float-2 transition-all duration-1000`} />
-      <div className={`fixed bottom-1/4 left-1/3 w-[500px] h-[500px] ${glows.c3} rounded-full filter blur-[130px] pointer-events-none animate-glow-float-3 transition-all duration-1000`} />
+      <div className={`fixed top-0 left-1/4 w-125 h-125 ${glows.c1} rounded-full filter blur-[130px] pointer-events-none animate-glow-float-1 transition-all duration-1000`} />
+      <div className={`fixed top-1/3 right-1/4 w-100 h-100 ${glows.c2} rounded-full filter blur-[130px] pointer-events-none animate-glow-float-2 transition-all duration-1000`} />
+      <div className={`fixed bottom-1/4 left-1/3 w-125 h-125 ${glows.c3} rounded-full filter blur-[130px] pointer-events-none animate-glow-float-3 transition-all duration-1000`} />
 
       {/* FLOATING DYNAMIC CAPSULE DOCK NAVBAR */}
       <div className="fixed top-0 left-0 right-0 z-50 px-4 pt-4 md:pt-5 pointer-events-none flex flex-col items-center">
@@ -158,7 +152,7 @@ export default function App() {
           className={`pointer-events-auto flex items-center justify-between w-full transition-all duration-500 rounded-2xl md:rounded-full ${
             isScrolled 
               ? 'max-w-5xl px-4 md:px-6 py-2 bg-black/50 backdrop-blur-md border border-white/[0.1] shadow-[0_12px_40px_rgba(168,85,247,0.15)] scale-[0.98]' 
-              : 'max-w-6xl px-5 md:px-8 py-2.5 bg-white/[0.03] backdrop-blur-md border border-white/[0.05] shadow-[0_8px_32px_rgba(0,0,0,0.2)] scale-100'
+              : 'max-w-6xl px-5 md:px-8 py-2.5 bg-white/3 backdrop-blur-md border border-white/5 shadow-[0_8px_32px_rgba(0,0,0,0.2)] scale-100'
           }`}
         >
           <div className="flex items-center">
@@ -302,7 +296,7 @@ export default function App() {
       {currentView === 'home' ? (
         <>
           {/* HERO SECTION */}
-          <HeroSection scrollToSection={scrollToSection} setActiveModal={setActiveModal} />
+          <HeroSection scrollToSection={scrollToSection} setActiveModal={setActiveModal}  customVideoUrl={HeroBgVideo} />
 
           {/* COMPONENT INTERACTION SUITE SECTIONS */}
           

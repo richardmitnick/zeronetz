@@ -9,11 +9,11 @@ interface FooterSectionProps {
 
 export default function FooterSection({ scrollToSection, setActiveModal, onLegalClick, onContactClick }: FooterSectionProps) {
   return (
-    <footer className="mt-20 border-t border-zinc-900 pt-10 px-6 max-w-7xl mx-auto">
+    <footer className="mt-20  backdrop-blur-sm text-white pt-10 px-6 max-w-7xl mx-auto">
       <div className="grid grid-cols-1 md:grid-cols-4 gap-8 pb-10">
         <div className="space-y-4">
           <div className="flex items-center">
-            <span className="text-xs font-extrabold tracking-widest text-zinc-200 uppercase">ZERO NETZ</span>
+            <span className="text-xs font-extrabold tracking-widest text-white uppercase">ZERO NETZ</span>
           </div>
           <p className="text-[11px] text-zinc-500 leading-relaxed">
             High-fidelity defensive cybersecurity, vulnerability research audits, and compliance fortification.
