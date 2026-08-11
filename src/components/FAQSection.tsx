@@ -26,7 +26,7 @@ const FAQ_ITEMS: FAQItem[] = [
 
 export default function FAQSection() {
   return (
-    <section className="py-24 md:py-32 border-t border-white/[0.03] bg-black/35 backdrop-blur-lg" id="faq-section">
+    <section className="py-24 md:py-32 flex items-center justify-center mx-auto border-t border-white/1 rounded-4xl backdrop-blur-sm w-[90%]" id="faq-section">
       <div className="max-w-4xl mx-auto px-6">
         <div className="text-center mb-16 space-y-3 flex flex-col items-center">
           <h2 className="text-3xl md:text-5xl font-extrabold text-white tracking-tight">Common Questions</h2>
