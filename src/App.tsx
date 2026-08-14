@@ -23,7 +23,7 @@ import LegalPage from './components/LegalPage';
 import ContactPage from './components/ContactPage';
 
 // import video path 
-import HeroBgVideoUrl from '@/public/video/Doze Studio.mp4'
+import HeroBgVideoUrl from '@/public/video/robotics bg video.mp4'
 import HeroBgVideo from './components/HeroBgVideo';
 
 export default function App() {
@@ -296,7 +296,7 @@ export default function App() {
       {currentView === 'home' ? (
         <>
           {/* HERO SECTION */}
-          <HeroSection scrollToSection={scrollToSection} setActiveModal={setActiveModal}  customVideoUrl={HeroBgVideo} />
+          <HeroSection scrollToSection={scrollToSection} setActiveModal={setActiveModal}  customVideoUrl={HeroBgVideoUrl} />
 
           {/* COMPONENT INTERACTION SUITE SECTIONS */}
           
