@@ -137,12 +137,7 @@ export default function App() {
       <div className='fixed inset-0 w-full h-full overflow-hidden pointer-events-none z-0 opacity-60'>
       <HeroBgVideo customVideoUrl={HeroBgVideoUrl} />
     </div>
-     
-
-      {/* Decorative subtle ambient lights with smooth Apple floating animation */}
-      <div className={`fixed top-0 left-1/4 w-125 h-125 ${glows.c1} rounded-full filter blur-[130px] pointer-events-none animate-glow-float-1 transition-all duration-1000`} />
-      <div className={`fixed top-1/3 right-1/4 w-100 h-100 ${glows.c2} rounded-full filter blur-[130px] pointer-events-none animate-glow-float-2 transition-all duration-1000`} />
-      <div className={`fixed bottom-1/4 left-1/3 w-125 h-125 ${glows.c3} rounded-full filter blur-[130px] pointer-events-none animate-glow-float-3 transition-all duration-1000`} />
+    
 
       {/* FLOATING DYNAMIC CAPSULE DOCK NAVBAR */}
       <div className="fixed top-0 left-0 right-0 z-50 px-4 pt-4 md:pt-5 pointer-events-none flex flex-col items-center">
@@ -173,7 +168,7 @@ export default function App() {
           </div>
 
           {/* Navigation Links with fluid interactive sliding capsules */}
-          <nav className="hidden md:flex items-center gap-1 p-1 bg-zinc-950/60 rounded-full border border-white/[0.04]">
+          <nav className="hidden md:flex items-center gap-1 p-1 bg-zinc-950/60 rounded-full border border-white/4">
             {navItems.map((item) => (
               <button
                 key={item.id}
@@ -188,7 +183,7 @@ export default function App() {
                 {hoveredTab === item.id && (
                   <motion.div
                     layoutId="hoverCapsule"
-                    className="absolute inset-0 bg-white/[0.04] rounded-full border border-white/[0.02]"
+                    className="absolute inset-0 bg-white/4 rounded-full border border-white/2"
                     transition={{ type: "spring", stiffness: 400, damping: 28 }}
                   />
                 )}
@@ -197,7 +192,7 @@ export default function App() {
                 {activeSection === item.id && (
                   <motion.div
                     layoutId="activeCapsule"
-                    className="absolute inset-0 bg-white/[0.08] rounded-full border border-white/[0.08] shadow-[inset_0_1px_1px_rgba(255,255,255,0.1),0_8px_20px_rgba(0,0,0,0.4)]"
+                    className="absolute inset-0 bg-white/8 rounded-full border border-white/8 shadow-[inset_0_1px_1px_rgba(255,255,255,0.1),0_8px_20px_rgba(0,0,0,0.4)]"
                     transition={{ type: "spring", stiffness: 360, damping: 25 }}
                   />
                 )}
@@ -228,7 +223,7 @@ export default function App() {
           {/* Mobile menu trigger */}
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="md:hidden p-2 bg-zinc-950 border border-white/[0.05] hover:border-white/[0.1] text-zinc-300 rounded-full focus:outline-none transition-apple cursor-pointer"
+            className="md:hidden p-2 bg-zinc-950 border border-white/5 hover:border-white/1 text-zinc-300 rounded-full focus:outline-none transition-apple cursor-pointer"
           >
             {mobileMenuOpen ? <X className="w-3.5 h-3.5" /> : <Menu className="w-3.5 h-3.5" />}
           </button>
@@ -276,7 +271,7 @@ export default function App() {
                 ))}
               </div>
               
-              <div className="pt-2 border-t border-white/[0.05] flex flex-col gap-3">
+              <div className="pt-2 border-t border-white/5 flex flex-col gap-3">
                 <button 
                   onClick={() => {
                     setCurrentView('contact');
@@ -301,7 +296,7 @@ export default function App() {
           {/* COMPONENT INTERACTION SUITE SECTIONS */}
           
           {/* 1. SERVICES SECTION */}
-          <section className="py-24 md:py-32 border-t border-white/[0.03] bg-black/35 backdrop-blur-lg" id="services-section">
+          <section className="py-24 md:py-32 rounded-3xl w-[98%] mx-auto flex justify-center backdrop-blur-lg" id="services-section">
             <div className="max-w-7xl mx-auto px-6">
               <div className="text-center mb-12 space-y-2 flex flex-col items-center">
                 <h2 className="text-2xl md:text-3xl font-bold text-zinc-100 tracking-tight">Our Services</h2>
@@ -321,7 +316,7 @@ export default function App() {
           }} />
 
           {/* 2. OUR PROCESS SECTION */}
-          <section className="py-24 md:py-32 border-t border-white/[0.03] bg-black/45 backdrop-blur-lg" id="process-section">
+          <section className="py-24 md:py-32 rounded-3xl mx-auto flex justify-center w-[98%]  backdrop-blur-lg" id="process-section">
             <div className="max-w-7xl mx-auto px-6">
               <div className="text-center mb-12 space-y-2 flex flex-col items-center">
                 <h2 className="text-2xl md:text-3xl font-bold text-zinc-100 tracking-tight">Our Structured Auditing Process</h2>
