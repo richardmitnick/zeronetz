@@ -10,7 +10,7 @@ interface HeroSectionProps {
 
 export default function HeroSection({ scrollToSection, setActiveModal, customVideoUrl }: HeroSectionProps) {
   return (
-    <section id="home-section" className="relative px-6  pt-36 pb-24 md:pt-48 md:pb-36  h-screen mx-auto flex flex-col items-center text-center">
+    <section id="home-section" className="relative px-6  pt-36 pb-24 md:pt-48 md:pb-36  h-full mx-auto flex flex-col items-center text-center">
       
 
     
