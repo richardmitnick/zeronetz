@@ -9,7 +9,7 @@ interface FooterSectionProps {
 
 export default function FooterSection({ scrollToSection, setActiveModal, onLegalClick, onContactClick }: FooterSectionProps) {
   return (
-    <footer className="mt-20  backdrop-blur-sm text-white pt-10 px-6 max-w-7xl mx-auto">
+    <footer className="mt-20  backdrop-blur-xl text-white pt-10 px-6 max-w-7xl mx-auto">
       <div className="grid grid-cols-1 md:grid-cols-4 gap-8 pb-10">
         <div className="space-y-4">
           <div className="flex items-center">
@@ -63,8 +63,8 @@ export default function FooterSection({ scrollToSection, setActiveModal, onLegal
             <button onClick={() => onLegalClick('security')} className="hover:text-[#52eb8e] transition-colors outline-none cursor-pointer">Security Policy</button>
           </div>
         </div>
-        <div className="flex items-center gap-6">
-          <span>Developed & Designed by <a href="https://rmdevelopers.com" target="_blank" rel="noreferrer" className="text-zinc-400 hover:text-white transition-colors font-semibold underline decoration-zinc-700 hover:decoration-white underline-offset-2">RM Developers</a></span>
+        <div className="flex items-center gap-6 pb-5">
+          <span>Developed & Designed by <a href="https://muhammadrabbi.vercel.app" target="_blank" rel="noreferrer" className="text-zinc-400 hover:text-white transition-colors font-semibold underline decoration-zinc-700 hover:decoration-white underline-offset-2">Muhammad Rabbi</a></span>
         </div>
       </div>
     </footer>

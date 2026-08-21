@@ -82,7 +82,7 @@ export default function ServicesPanel() {
           <motion.div
             key={index}
             variants={cardVariants}
-            className="group relative rounded-3xl p-8 bg-zinc-950/40 backdrop-blur-md border border-white/[0.04] hover:border-purple-500/30 transition-all duration-500 overflow-hidden shadow-[0_8px_32px_rgba(0,0,0,0.3)] hover:shadow-[0_16px_48px_rgba(147,51,234,0.08)] flex flex-col justify-between"
+            className="group relative rounded-3xl p-8 bg-zinc-950/40 backdrop-blur-md border border-white/4 hover:border-purple-500/30 transition-all duration-500 overflow-hidden shadow-[0_8px_32px_rgba(0,0,0,0.3)] hover:shadow-[0_16px_48px_rgba(147,51,234,0.08)] flex flex-col justify-between"
             whileHover={{ y: -4 }}
           >
             {/* Ambient Background Gradient for Hover Glow */}
